@@ -1,0 +1,33 @@
+ul {
+    list-style-type: none;
+}
+
+.bm-list {
+    padding: 10px;
+    cursor: pointer;
+    width: 400px;
+    margin-top: 15px;
+    border: 1px solid #8FC9F2;
+    background-color: #C0E2FA;
+    color: #06548C;
+    font-weight: bold;
+}
+
+.bm-list:hover {
+    background-color: #B4DDFA;
+}
+
+.bm-list:active {
+    background-color: #81C9FC;
+}
+
+.bm-remove, .bm-logout {
+    float: right;
+}
+.bm-segment label {
+    width: 100px;
+    display: inline-block;
+}
+.bm-segment {
+    padding: 5px;
+}

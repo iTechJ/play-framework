@@ -1,0 +1,20 @@
+@()
+<!-- ko if: $root.chosenSectionId().id == "det" && $root.detailsVM.book -->
+    <input type="hidden" name="id" data-bind="attr: {value: $root.detailsVM.book.id}"/>
+
+    <div class="bm-segment">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" data-bind="value: $root.detailsVM.book().name,
+            enable: $root.user() && $root.user().role === 'ADMIN'">
+    </div>
+    <div class="bm-segment">
+        <label for="price">Price: </label>
+        <input type="text" name="price" id="price" data-bind="value: $root.detailsVM.book().price,
+            enable: $root.user() && $root.user().role === 'ADMIN'">
+    </div>
+
+    <!-- ko if: $root.user() && $root.user().role === "ADMIN" -->
+        <button type="button" name="submit" data-bind="click: function(){$root.detailsVM.submit($root)}">Submit</button>
+    <!-- /ko -->
+    <button type="button" name="cancel" data-bind="click: function(){ $root.goTo('lst')}">Cancel</button>
+<!-- /ko -->

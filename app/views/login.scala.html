@@ -1,0 +1,6 @@
+@()
+<!-- ko if: $root.chosenSectionId().id == "lgn" -->
+    <input type="text" name="name" data-bind="value: $root.loginVM.name">
+    <input type="text" name="password" data-bind="value: $root.loginVM.password">
+    <button type="button" name="login" data-bind="click: $root.loginVM.login">Login</button>
+<!-- /ko -->

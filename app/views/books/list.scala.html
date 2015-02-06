@@ -1,0 +1,21 @@
+@()
+<!-- ko if: $root.chosenSectionId().id == "lst" -->
+
+    <!-- ko if: $root.user() && $root.user().role === "ADMIN" -->
+        <button type="button" name="add" data-bind="click: function(){$root.listVM.addRecord($root)}">Add Book</button>
+    <!-- /ko -->
+
+    <ul data-bind="foreach: $root.listVM.books">
+        <li class="bm-list" data-bind="attr: { id: id }, click: function(book, evt) {$root.listVM.loadRecord(book, evt, $root)}">
+            <span data-bind="text: name"></span>
+            <button class="bm-remove" type="button" data-bind="click: $root.listVM.deleteBook">-</button>
+        </li>
+    </ul>
+
+    <!-- ko if: $root.listVM.currentPage() > 1 -->
+        <button type="button" name="add" data-bind="click: $root.listVM.previous">Previous</button>
+    <!-- /ko -->
+    <!-- ko if: $root.listVM.currentPage() < $root.listVM.totalPages() -->
+        <button type="button" name="add" data-bind="click: $root.listVM.next">Next</button>
+    <!-- /ko -->
+<!-- /ko -->
